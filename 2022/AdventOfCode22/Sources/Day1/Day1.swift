@@ -4,7 +4,6 @@ import Foundation
 public struct Day1 {
 
     public static func main() {
-
         let inputURL = Bundle.module.url(forResource: "input", withExtension: "txt")!
         let input = try! String(contentsOf: inputURL)
 

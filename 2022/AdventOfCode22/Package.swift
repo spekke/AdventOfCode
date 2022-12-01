@@ -8,6 +8,16 @@ let package = Package(
     platforms: [
         .macOS(.v12)
     ],
+    products: [
+        .executable(
+            name: "Day1",
+            targets: ["Day1"]
+        ),
+        .executable(
+            name: "Day2",
+            targets: ["Day2"]
+        )
+    ],
     dependencies: [],
     targets: [
         .executableTarget(
@@ -17,9 +27,12 @@ let package = Package(
                 .copy("input.txt")
             ]
         ),
-        .testTarget(
-            name: "Day1Tests",
-            dependencies: ["Day1"]
+        .executableTarget(
+            name: "Day2",
+            dependencies: [],
+            resources: [
+                .copy("input.txt")
+            ]
         )
     ]
 )
