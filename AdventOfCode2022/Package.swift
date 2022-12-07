@@ -32,6 +32,10 @@ let package = Package(
         .executable(
             name: "Day6",
             targets: ["Day6"]
+        ),
+        .executable(
+            name: "Day7",
+            targets: ["Day7"]
         )
     ],
     dependencies: [],
@@ -77,6 +81,14 @@ let package = Package(
             dependencies: [],
             resources: [
                 .copy("input.txt")
+            ]
+        ),
+        .executableTarget(
+            name: "Day7",
+            dependencies: [],
+            resources: [
+                .copy("input.txt"),
+                .copy("testInput.txt")
             ]
         )
     ]
