@@ -9,19 +9,23 @@ let package = Package(
         .macOS(.v14)
     ],
     products: [
-        // .executable(
-        //     name: "Day1",
-        //     targets: ["Day1"]
-        // )
+        .executable(
+            name: "Day1",
+            targets: ["Day1"]
+        )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-parsing", from: "0.13.0")
+    ],
     targets: [
-        // .executableTarget(
-        //     name: "Day1",
-        //     dependencies: [],
-        //     resources: [
-        //         .copy("input.txt")
-        //     ]
-        // )
+        .executableTarget(
+            name: "Day1",
+            dependencies: [
+                .product(name: "Parsing", package: "swift-parsing")
+            ],
+            resources: [
+                .copy("input.txt")
+            ]
+        )
     ]
 )
