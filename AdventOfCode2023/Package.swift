@@ -12,6 +12,10 @@ let package = Package(
         .executable(
             name: "Day1",
             targets: ["Day1"]
+        ),
+        .executable(
+            name: "Day2",
+            targets: ["Day2"]
         )
     ],
     dependencies: [
@@ -20,6 +24,15 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "Day1",
+            dependencies: [
+                .product(name: "Parsing", package: "swift-parsing")
+            ],
+            resources: [
+                .copy("input.txt")
+            ]
+        ),
+        .executableTarget(
+            name: "Day2",
             dependencies: [
                 .product(name: "Parsing", package: "swift-parsing")
             ],
